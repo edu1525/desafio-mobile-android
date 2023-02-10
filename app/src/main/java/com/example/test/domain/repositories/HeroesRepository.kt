@@ -4,5 +4,5 @@ import com.example.test.domain.models.HeroesData
 import kotlinx.coroutines.flow.Flow
 
 interface HeroesRepository {
-    fun getHeroes(): Flow<HeroesData>
+    fun getHeroes(): Flow<HeroesData?>
 }
