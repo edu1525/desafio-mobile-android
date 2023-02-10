@@ -42,6 +42,10 @@ android {
 }
 
 dependencies {
+    // LOCAL MODULES
+    implementation project(':core')
+
+    // ANDROID
     implementation "androidx.appcompat:appcompat:$app_compat_version"
     implementation "com.google.android.material:material:$material_version"
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:$swipe_refresh_version"
