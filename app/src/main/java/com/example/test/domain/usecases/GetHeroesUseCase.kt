@@ -6,8 +6,9 @@ import com.example.test.domain.models.HeroesData
 import com.example.test.domain.repositories.HeroesRepository
 import com.example.test.domain.usecases.params.GetHeroesParams
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class GetHeroesUseCase(
+class GetHeroesUseCase @Inject constructor(
     private val repository: HeroesRepository
 ) : UseCaseWithParams<GetHeroesParams, Flow<BaseResponse<HeroesData>>>() {
     override fun performAction(requestData: GetHeroesParams): Flow<BaseResponse<HeroesData>> {

@@ -21,7 +21,7 @@ ext {
     // HTTP REQUEST
     retrofit_version = '2.9.0'
     okhttp_version = '4.3.1'
-    moshi_version = '2.4.0'
+    moshi_version = '1.14.0'
 
     // IMAGE HANDLERS
     circleimageview_version = '3.0.0'

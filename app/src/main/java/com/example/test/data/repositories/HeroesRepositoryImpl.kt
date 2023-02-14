@@ -9,8 +9,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import javax.inject.Inject
 
-class HeroesRepositoryImpl(private val api: MarvelApi) : HeroesRepository {
+class HeroesRepositoryImpl @Inject constructor(private val api: MarvelApi) : HeroesRepository {
     override fun getHeroes(offset: Int) = flow {
         api.getCharacters(offset, 10, "").apply {
             data?.run {
@@ -19,4 +20,5 @@ class HeroesRepositoryImpl(private val api: MarvelApi) : HeroesRepository {
         }
     }.catch { emit(BaseResponse.Error<HeroesData>(it)) }
         .flowOn(Dispatchers.IO)
+
 }

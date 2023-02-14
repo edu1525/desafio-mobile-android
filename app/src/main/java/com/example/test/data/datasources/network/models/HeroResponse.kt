@@ -1,7 +1,9 @@
 package com.example.test.data.datasources.network.models
 
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
+@JsonClass(generateAdapter = true)
 data class HeroResponse(
     @Json(name = "comics")
     val comics: ActingResponse<NormalItemResponse>?,

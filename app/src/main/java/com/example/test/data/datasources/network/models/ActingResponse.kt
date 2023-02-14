@@ -1,7 +1,9 @@
 package com.example.test.data.datasources.network.models
 
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
+@JsonClass(generateAdapter = true)
 data class ActingResponse<T : ItemResponse>(
     @Json(name = "available")
     val available: Int?,

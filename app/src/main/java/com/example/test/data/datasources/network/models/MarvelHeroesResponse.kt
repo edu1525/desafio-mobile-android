@@ -2,7 +2,9 @@ package com.example.test.data.datasources.network.models
 
 
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
+@JsonClass(generateAdapter = true)
 data class MarvelHeroesResponse(
     @Json(name = "attributionHTML")
     val attributionHTML: String?,
